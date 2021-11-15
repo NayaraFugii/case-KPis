@@ -3,13 +3,19 @@ import './Footer.scss'
 import Button from '../../components/button/Button';
 import React from 'react';
 
-function Footer(){
+function Footer({classFooter, nameBtn, buttonClick}){
 
     return (
-      <div className="footer-container">
-         <p>Powered by</p>
-         <Button classBtn ="buttonWhite" nameBtn="Key Peoples Insights"/>
-      </div>
+      <footer className={classFooter}>
+        <div className="container-footer1">
+        <p>Powered by</p>
+         <Button classBtn ="buttonLogo" nameBtn="Key Peoples Insights"/>
+        </div>
+        <div className="container-footer2">
+          <Button classBtn ="buttonWhite" nameBtn="Anterior"/>
+          <Button classBtn ="buttonBlue" nameBtn={nameBtn} buttonClick={buttonClick}/>
+        </div>
+      </footer>
     );
   };
   export default Footer;

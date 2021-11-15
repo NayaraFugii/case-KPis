@@ -1,16 +1,88 @@
-.footer-container{
-    display: flex;
-    align-items: center;
+body, html {
+    height:100%;
+    width: 100%;
+}
 
-    p{
+.footer-container-initial{
+    div{
+        display: flex;
+        align-items: center;
+    }    
+
+        p{
+            
+            margin: 0 16px;
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            color: #2E455A;
         
-        margin: 0 16px;
-        font-family: Open Sans;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 16px;
-        color: #2E455A;
-    
-    }
+        }
+            .buttonBlue, .buttonWhite{
+                display: none;
+            }
 
+}
+
+
+.footer-container-static1, .footer-container-static2, .footer-container-static3 {
+
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    background-color:#FFFFFF;
+    
+
+    div{
+        display: flex;
+        align-items: center;
+    }    
+
+        p{
+            
+            margin: 0 16px;
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            color: #2E455A;
+        
+        }
+
+        .container-footer1{
+            padding-left: 25px;
+        }
+        .container-footer2{
+            padding-right: 25px;
+        }
+
+        
+            
+
+}
+
+.footer-container-static1 {
+
+    .buttonWhite{
+        display: none;
+    }
+        
+
+}
+
+.footer-container-static2 {
+
+        .buttonWhite{
+            margin-right: 10px;
+        }
+            
+
+}
+
+.footer-container-static3{
+    .buttonWhite, .buttonBlue{
+        display: none;
+    }
 }

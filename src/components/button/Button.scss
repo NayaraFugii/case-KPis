@@ -1,3 +1,8 @@
+body, html {
+    height:100%;
+    width: 100%;
+}
+
 .buttonBlue{
     background: #2E455A;
     border-radius: 4px;
@@ -17,7 +22,30 @@
         }
 }
 
+
 .buttonWhite{
+    border: 1px solid #5B7994;
+    background-color: #FFFFFF;
+    color: #5B7994;
+    border-radius: 4px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    width: 107px;
+    height: 50px;
+    padding: 8px 24px;
+    cursor: pointer;
+   
+
+        img{
+            display: none;
+        }
+}
+
+
+
+.buttonLogo{
     border: 1px solid #2E455A;
     background-color: #FFFFFF;
     color: #5B7994;

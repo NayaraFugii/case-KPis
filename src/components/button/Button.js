@@ -1,12 +1,13 @@
 import './Button.scss';
 import vector from'../../pages/images/Vector.png'
+
 import React from 'react';
 
-function Button({nameBtn, classBtn}){
+function Button({nameBtn, classBtn, buttonClick}){    
 
     return (
       <>
-        <button className={classBtn}><img src={vector} alt="logo KPis"/>{nameBtn}</button>
+        <button className={classBtn} onClick={buttonClick}><img src={vector} alt="logo KPis"/>{nameBtn}</button>
       </>
     );
   };

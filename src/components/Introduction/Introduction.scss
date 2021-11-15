@@ -1,0 +1,40 @@
+body, html {
+    height:100%;
+    width: 100%;
+}
+
+.text-introducion-container{
+    background: #FFFFFF;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5px;
+
+    .text-introduction {
+        padding: 20px 15px 15px 15px;
+        box-shadow: 0 0 5px #f6f4f4;
+    }
+
+    .text-introduction h1, 
+    .text-introduction p{
+        font-style: normal;
+        color: #2E455A;
+        margin-bottom: 20px;
+    }
+
+    .text-introduction h1{   
+        font-family: Open Sans;     
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .text-introduction p{       
+        font-weight: normal;
+        font-size: 16px;
+
+    }
+
+}
+
