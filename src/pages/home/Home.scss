@@ -32,7 +32,8 @@ body, html {
 
 .navBar{
     grid-area: navBar;
-    margin-right: 10%;
+    justify-self: flex-end;
+    margin-right: 20%;
    
 }
 

@@ -2,25 +2,32 @@ body, html {
     height:100%;
     width: 100%;
 }
-html{
-    background-color: #E5E5E5;
-}
+
 .search-container{
     overflow-y: scroll;    
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center
-   /*  display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    grid-template-rows: 25% 25% 25% 25%;
-    grid-template-areas:      
-    "navBar navBar navBar"
-    ". section ."
-    ". form ."
-    "footer footer footer"
-    ; */
+    justify-content: center;
+    background-color: rgba(143, 134, 128, 0.157);
+}
 
+.content-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.last-image{
+    grid-area: last-image;
+}
+
+.tittle-end{
+    color: #2E455A;
+    font-family: Bree Serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 59px;
 }
 
 .navBar-search{

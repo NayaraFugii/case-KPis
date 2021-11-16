@@ -1,6 +1,6 @@
 import './Form.scss';
 import React from 'react';
-import Button from '../button/Button';
+import ButtonComponent from '../../components/button-component/ButtonComponent';
 
 function Form({position, title, question, answer, coment, showTag}){
 
@@ -16,7 +16,7 @@ function Form({position, title, question, answer, coment, showTag}){
               <div className="button-order">
                 <p>{answer}</p>
                 {buttonNumber.map((number, indice)=>(
-                  <Button key={indice} nameBtn={number} className="buttonWhite"/>
+                  <ButtonComponent key={indice} nameBtn={number} variant="outlined"/>
                 ))}
               </div>
              

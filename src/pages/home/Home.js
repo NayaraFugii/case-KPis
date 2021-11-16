@@ -1,15 +1,18 @@
 import './Home.scss';
 import logo from '../images/image-home.png'
+import CompanyLogo from '../images/Company Logo.png';
+import Gear from '../images/Subtract.png';
 import '../../components/button/Button.scss';
 import '../../components/navbar/NavBar.scss';
 import '../../components/footer/Footer.scss';
-import Button from '../../components/button/Button';
+import ButtonComponent from '../../components/button-component/ButtonComponent';
 import Footer from '../../components/footer/Footer';
-import NavBar from '../../components/navbar/Navbar';
 import { useNavigate } from 'react-router-dom'
 
 function Home() {
-
+  const style={
+    display: 'none'
+  }; 
   const navigate = useNavigate();
 
   const routerButton = () =>{
@@ -20,20 +23,21 @@ function Home() {
     <div className="home-container">
       <img className="image" src={logo} alt="imagem de inicio"/>
       <div className="navBar">
-          <NavBar classNav="nav-container"/>
+      <p><img src={Gear} alt="image de engrenagem"/><img src={CompanyLogo} alt="logo companhia"/></p>
         </div>
 
       <div className="text-container">
         <h1 className="title">
           Olá! Ajude-nos com nossa pesquisa de engajamento.
         </h1>
-        <Button classBtn ="buttonBlue" nameBtn="Aceitar" buttonClick={routerButton}/>          
+        <div>
+          <ButtonComponent nameBtn="Aceitar" buttonClick={routerButton} variant="contained"/>
+        </div>                  
       </div>
         
       <div className="btn-logo">
-        <Footer classFooter="footer-container-initial"/>
+        <Footer classFooter="footer-container-initial " showButtonWhite={style} showButtonBlue={style}/>
       </div>
-
     </div>    
   );
 }

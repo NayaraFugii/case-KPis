@@ -1,10 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/home/Home';
-import Static from './pages/static-introduction/Static';
 import Search from './pages/search/Search';
-import LastPage from './pages/last-page/LastPage';
-
 
 function Router() {
     return (      
@@ -14,7 +11,7 @@ function Router() {
           <Route path="/introduction" element={<Search/>} />
           <Route path="/search/part1" element={<Search/>} />
           <Route path="/search/part2" element={<Search/>} />
-          <Route path="/finish" element={<LastPage/>} />
+          <Route path="/finish" element={<Search/>} />
         </Routes>
       </BrowserRouter>        
     );
