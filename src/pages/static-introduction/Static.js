@@ -1,4 +1,4 @@
-import './Static.scss';
+/* import './Static.scss';
 import { useLocation, useNavigate } from 'react-router-dom';
 import '../../components/button/Button.scss';
 import '../../components/navbar/NavBar.scss';
@@ -35,4 +35,4 @@ function Static() {
   );
 }
 
-export default Static;
+export default Static; */

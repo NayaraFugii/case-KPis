@@ -11,7 +11,7 @@ function Router() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/introduction" element={<Static/>} />
+          <Route path="/introduction" element={<Search/>} />
           <Route path="/search/part1" element={<Search/>} />
           <Route path="/search/part2" element={<Search/>} />
           <Route path="/finish" element={<LastPage/>} />

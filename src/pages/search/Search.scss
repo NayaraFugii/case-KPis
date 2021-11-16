@@ -6,28 +6,56 @@ html{
     background-color: #E5E5E5;
 }
 .search-container{
+    overflow-y: scroll;    
     width: 100%;
     height: 100%;
-    display: grid;
+    display: flex;
+    justify-content: center
+   /*  display: grid;
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: 25% 25% 25% 25%;
     grid-template-areas:      
     "navBar navBar navBar"
-    ". form ."
+    ". section ."
     ". form ."
     "footer footer footer"
-    ;
+    ; */
 
 }
 
 .navBar-search{
-    grid-area: navBar;   
+    position: fixed;
+    width: 100%;
+    align-self: flex-start;   
 }
+
+.container-content{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-areas: 
+    " . section . "
+    " . form . "
+    ; 
+}
+
+.section-container{
+    grid-area: section;
+    align-self: flex-end;
+}
+
 .form-container{
     grid-area: form;
+    align-self: flex-start;
+    margin-top: 30px;
 }
+
+
+
 .footer{
-    grid-area: footer;
+    /* grid-area: footer; */
+    position: fixed;
+    width: 100%;
     align-self: flex-end;
 }
 
