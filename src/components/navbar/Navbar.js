@@ -16,8 +16,9 @@ const theme = createTheme({
   },
 });
 
-function Navbar({classNav}){
-  const [percentage, setpercentage] = React.useState('0')
+function Navbar({classNav, percentage, size}){ 
+  
+  console.log(size)
 
     return (      
       <>
@@ -28,7 +29,8 @@ function Navbar({classNav}){
               <div className={classNav}>
               <p><img src={Gear} alt="image de engrenagem"/><img src={CompanyLogo} alt="logo companhia"/></p>
                 <div className="percentage-container">              
-                    <div className="percentage-bar">                
+                    <div className="percentage-bar">
+                      <div className="inner-bar" style={size}></div>                
                     </div>
                     <span>{percentage}%</span>
                 </div> 

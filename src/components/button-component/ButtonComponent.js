@@ -13,8 +13,6 @@ const theme = createTheme({
 
 function ButtonComponent({nameBtn, buttonClick, variant}){   
 
-  console.log(theme)
-
     return (
       <>
       <ThemeProvider theme={theme}>

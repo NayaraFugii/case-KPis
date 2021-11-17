@@ -1,6 +1,4 @@
 import './Search.scss';
-import '../../components/button/Button.scss';
-import '../../components/navbar/NavBar.scss';
 import logo from '../images/last-image.png'
 import Footer from '../../components/footer/Footer';
 import NavBar from '../../components/navbar/Navbar';
@@ -11,9 +9,11 @@ import Form from '../../components/form /Form';
 import Introduction from '../../components/Introduction/Introduction';
 
 function Search() {
-
+  const value = Math.round(100/3);
   const location = useLocation();
   const navigate = useNavigate();
+  const valuePorcentage = sessionStorage.getItem('percentage');
+  const [percentage, setPercentage] = React.useState(0)
   const [styleButtonWhite, setStyleButtonWhite] = React.useState();
   const [styleButtonBlue, setStyleButtonBlue] = React.useState();
   const [section, setSection] = React.useState({
@@ -78,25 +78,36 @@ function Search() {
     }
   } 
 
-  const nextPage=()=>{
+  const nextPage=()=>{    
     if(location.pathname === urlIntroduction){
-      navigate(nps.url)     
+      navigate(nps.url)
+      setPercentage(percentage + value)    
+      sessionStorage.setItem('percentage', percentage + value);
     }else if(location.pathname === nps.url){
       navigate(onboarding.url)
+      setPercentage(percentage + value)
+      sessionStorage.setItem('percentage', percentage + value);
     }else if(location.pathname === onboarding.url){
-      navigate(urlFinish)  
+      navigate(urlFinish)
+      setPercentage(percentage + (value + 1) )
+      sessionStorage.setItem('percentage', percentage + value);
     }
   }
+  console.log(typeof tvaluePorcentage) 
 
   const backPage=()=>{
     window.history.back();
   } 
+
+  const teste={
+    width: percentage.toString() + '%'
+  }
       
   return (
     <div className="search-container">
 
       <div className="navBar-search">
-        <NavBar classNav="nav-container-percentage-bar"/>
+        <NavBar classNav="nav-container-percentage-bar" percentage={percentage} size={teste}/>
       </div>
 
            {location.pathname === urlIntroduction &&  

@@ -16,6 +16,7 @@ function Home() {
   const navigate = useNavigate();
 
   const routerButton = () =>{
+    sessionStorage.clear();
       navigate('/introduction');    
   };
 

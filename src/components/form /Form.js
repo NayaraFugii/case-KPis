@@ -1,6 +1,7 @@
 import './Form.scss';
 import React from 'react';
 import ButtonComponent from '../../components/button-component/ButtonComponent';
+import FormGroup from '@material-ui/core/FormGroup'
 
 function Form({position, title, question, answer, coment, showTag}){
 
@@ -8,7 +9,7 @@ function Form({position, title, question, answer, coment, showTag}){
 
     return (
       <>
-        <form key={position}className ="text-form-container">
+        <FormGroup key={position}className ="text-form-container">
           <div className="text-form">
             <h1 className="title-form">{title}</h1>
               <p>{question}</p>
@@ -26,7 +27,7 @@ function Form({position, title, question, answer, coment, showTag}){
               </div>
 
           </div>           
-        </form>
+        </FormGroup>
       </>
     );
   };
