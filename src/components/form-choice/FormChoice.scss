@@ -4,7 +4,7 @@ body, html {
 }
 
 .text-form-container{
-    background: #FFFFFF;        
+    background: #FFFFFF;
     width: 100%;
     height: auto;
     display: flex;
@@ -36,22 +36,26 @@ body, html {
         font-size: 16px;
 
     }
+
 }
 
-.btnQuestions{
- display: flex;
- align-items: flex-end; 
+.inputQuestions{
+    display: flex;
+    flex-direction: column;
+    margin-top:10px;
+
+    label{
+        margin-left: 5px;
+        font-family: Open Sans;
+        font-size: 16px;
+        color: #2E455A;
+    }
 }
 
-textarea{
-    width: 100%;
-    height: 20vh;
-    resize: none;
+.area-choice{
     border-radius: 5px;
     border:1px solid rgba(97, 95, 95, 0.6);
-
+    padding: 10px;
+    margin-top:10px;
 }
-::-webkit-input-placeholder {
-   padding: 10px;
- }
 

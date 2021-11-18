@@ -3,8 +3,42 @@ body, html {
     width: 100%;
 }
 
-.search-container{
-    overflow-y: scroll;    
+.container-scroll{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    justify-self: center;
+    align-self: center;
+    height: 480px;
+    margin-top: 30px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas:
+    ". section ."
+    ". form ."
+   
+}
+.section-container{
+    grid-area: section;
+    margin-top: 30px;
+    
+}
+
+.form-container{
+    grid-area: form;
+}
+
+.containerForm{
+    margin-top: 30px;
+}
+
+.navBar-search{
+    position: fixed;
+    width: 100%;
+    align-self: flex-start;   
+}
+
+.search-container{      
     width: 100%;
     height: 100%;
     display: flex;
@@ -12,14 +46,10 @@ body, html {
     background-color: rgba(143, 134, 128, 0.157);
 }
 
-.content-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.last-image{
-    grid-area: last-image;
+.footer{
+    position: fixed;
+    width: 100%;
+    align-self: flex-end;
 }
 
 .tittle-end{
@@ -30,41 +60,15 @@ body, html {
     font-size: 59px;
 }
 
-.navBar-search{
-    position: fixed;
-    width: 100%;
-    align-self: flex-start;   
+.last-image{
+    grid-area: last-image;
 }
 
-.container-content{
-    display: grid;
+.content-container{
+    display: flex;
     align-items: center;
-    grid-template-columns: 1fr 3fr 1fr;
-    grid-template-areas: 
-    " . section . "
-    " . form . "
-    ; 
+    justify-content: center;
 }
-
-.section-container{
-    grid-area: section;
-    align-self: flex-end;
-}
-
-.form-container{
-    grid-area: form;
-    align-self: flex-start;
-    margin-top: 30px;
-}
-
-
-
-.footer{
-    position: fixed;
-    width: 100%;
-    align-self: flex-end;
-}
-
 
 
 

@@ -7,12 +7,13 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Form from '../../components/form /Form';
 import Introduction from '../../components/Introduction/Introduction';
+import FormChoise from '../../components/form-choice/FormChoice';
 
 function Search() {
   const value = Math.round(100/3);
   const location = useLocation();
   const navigate = useNavigate();
-  const valuePorcentage = sessionStorage.getItem('percentage');
+  const valuePorcentage = localStorage.getItem('percentage');
   const [percentage, setPercentage] = React.useState(0)
   const [styleButtonWhite, setStyleButtonWhite] = React.useState();
   const [styleButtonBlue, setStyleButtonBlue] = React.useState();
@@ -49,7 +50,7 @@ function Search() {
   const questionsNumberNPS=[{
     title: form.title,
     question:'Em uma escala de 0 a 10, qual a probabilidade de você recomendar a PRB como um bom local de trabalho?',
-    answer: form.answer   
+    answer: form.answer,  
   }];
 
   const urlIntroduction = '/introduction';
@@ -80,20 +81,24 @@ function Search() {
 
   const nextPage=()=>{    
     if(location.pathname === urlIntroduction){
+      const newPercentage = percentage + value;
       navigate(nps.url)
-      setPercentage(percentage + value)    
-      sessionStorage.setItem('percentage', percentage + value);
+      setPercentage(newPercentage)    
+      localStorage.setItem('percentage', newPercentage);
     }else if(location.pathname === nps.url){
+      const newPercentage = percentage + value;
       navigate(onboarding.url)
-      setPercentage(percentage + value)
-      sessionStorage.setItem('percentage', percentage + value);
+      setPercentage(newPercentage)
+      localStorage.setItem('percentage', newPercentage);
     }else if(location.pathname === onboarding.url){
+      const newPercentage = 100;
       navigate(urlFinish)
-      setPercentage(percentage + (value + 1) )
-      sessionStorage.setItem('percentage', percentage + value);
+      setPercentage(newPercentage)
+      localStorage.setItem('percentage', newPercentage);
     }
   }
-  console.log(typeof tvaluePorcentage) 
+ 
+  console.log(typeof valuePorcentage) 
 
   const backPage=()=>{
     window.history.back();
@@ -110,37 +115,71 @@ function Search() {
         <NavBar classNav="nav-container-percentage-bar" percentage={percentage} size={teste}/>
       </div>
 
-           {location.pathname === urlIntroduction &&  
-            <div className = "container-content">
-              <div className="section-container">
-                <Introduction/>
-              </div>
-            </div>}
-           
-           {(location.pathname === nps.url|| location.pathname === onboarding.url) &&
-           <div className = "container-content">
-              <div className="section-container">            
-                <Section title ={section.title} text={section.text}/>                                   
-              </div>
+            {(location.pathname === nps.url|| location.pathname === onboarding.url ||location.pathname === urlIntroduction)&&
+
+              <form className="container-scroll">
+
+              {location.pathname === urlIntroduction &&              
+                  <div className="section-container">
+                    <Introduction/>
+                  </div>
+              }
+
+              {(location.pathname === nps.url|| location.pathname === onboarding.url) &&
+
+                  <div className="section-container">            
+                    <Section title ={section.title} text={section.text}/>                                   
+                  </div>
+              }
 
               <div className="form-container">
-                {questionsNumberOnbording.map(({title, question, answer}, indice)=>(
-                  <Form key={indice} title={title} question={question} answer={answer} showTag={style}/>
-                ))} 
+                {location.pathname === nps.url &&                  
+                    <div className="containerForm">
+                    {questionsNumberNPS.map(({title, question, answer}, indice)=>(
+                      <Form key={indice} title={title} question={question} answer={answer} coment={form.coment}/>
+                    ))} 
+                  </div>                                               
+                }
+
+                {location.pathname === nps.url &&
+                  <div className="containerForm">
+                    {questionsNumberNPS.map(({title, question}, indice)=>(
+                      <Form key={indice} title={title} question={question} showButtons={style}/>
+                    ))} 
+                  </div>                               
+                }
+
+                {location.pathname === onboarding.url &&
+                  <div className="containerForm">
+                    {questionsNumberOnbording.map(({title, question, answer}, indice)=>(
+                      <Form key={indice} title={title} question={question} answer={answer} showTag={style}/>
+                    ))} 
+                  </div>              
+                }  
+
+                {location.pathname === onboarding.url &&
+                  <div className="containerForm">
+                    {questionsNumberOnbording.map(({title, question, answer}, indice)=>(
+                      <FormChoise key={indice} title={title} question={question} answer={answer} showTag={style}/>
+                    ))} 
+                  </div>              
+                }  
+
               </div>
 
-           </div>
-           } 
+              
+              </form>
+            }
 
-           {location.pathname === urlFinish &&
-           <div className="content-container">
-           < img className="last-image" src={logo} alt="imagem de agradecimento"/>   
-             
-             <h1 className="tittle-end">
-               Pronto! Muito obrigado por sua colaboração.
-             </h1>
-           </div>
-           } 
+            {location.pathname === urlFinish &&
+              <div className="content-container">
+              < img className="last-image" src={logo} alt="imagem de agradecimento"/>   
+                
+                <h1 className="tittle-end">
+                  Pronto! Muito obrigado por sua colaboração.
+                </h1>
+              </div>
+            }
 
           <div className="footer">
               <Footer nameBtnBlue="Próximo" nameBtnWhite="Anterior" classFooter="footer-container-static2" buttonNext={nextPage}

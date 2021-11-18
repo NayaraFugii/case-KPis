@@ -17,7 +17,6 @@ function Footer({nameBtnWhite, nameBtnBlue, buttonNext, buttonbackPage, showButt
                 <Grid item xs={12} sm={6} >
                   <Box >
                     <div className="logo-btn-container">                  
-                      <p>Powered by</p>
                       <Button classBtn ="buttonLogo" nameBtn="Key Peoples Insights"/>
                     </div>
                   </Box>

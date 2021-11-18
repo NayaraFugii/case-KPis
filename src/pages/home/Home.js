@@ -2,12 +2,10 @@ import './Home.scss';
 import logo from '../images/image-home.png'
 import CompanyLogo from '../images/Company Logo.png';
 import Gear from '../images/Subtract.png';
-import '../../components/button/Button.scss';
-import '../../components/navbar/NavBar.scss';
-import '../../components/footer/Footer.scss';
 import ButtonComponent from '../../components/button-component/ButtonComponent';
-import Footer from '../../components/footer/Footer';
+import Button from '../../components/button/Button';
 import { useNavigate } from 'react-router-dom'
+
 
 function Home() {
   const style={
@@ -16,7 +14,7 @@ function Home() {
   const navigate = useNavigate();
 
   const routerButton = () =>{
-    sessionStorage.clear();
+    localStorage.clear();
       navigate('/introduction');    
   };
 
@@ -37,7 +35,7 @@ function Home() {
       </div>
         
       <div className="btn-logo">
-        <Footer classFooter="footer-container-initial " showButtonWhite={style} showButtonBlue={style}/>
+        <Button/>
       </div>
     </div>    
   );
