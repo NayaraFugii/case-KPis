@@ -1,42 +1,41 @@
 body, html {
     height:100%;
     width: 100%;
-}
+};
 
 .container-scroll{
     overflow-y: scroll;
     overflow-x: hidden;
     justify-self: center;
     align-self: center;
-    height: 480px;
+    height: 77vh;
     margin-top: 30px;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-areas:
     ". section ."
-    ". form ."
-   
-}
+    ". form ."   
+};
+
 .section-container{
     grid-area: section;
-    margin-top: 30px;
-    
-}
+    margin-top: 30px;    
+};
 
 .form-container{
     grid-area: form;
-}
+};
 
 .containerForm{
     margin-top: 30px;
-}
+};
 
 .navBar-search{
     position: fixed;
     width: 100%;
     align-self: flex-start;   
-}
+};
 
 .search-container{      
     width: 100%;
@@ -44,13 +43,13 @@ body, html {
     display: flex;
     justify-content: center;
     background-color: rgba(143, 134, 128, 0.157);
-}
+};
 
 .footer{
     position: fixed;
     width: 100%;
     align-self: flex-end;
-}
+};
 
 .tittle-end{
     color: #2E455A;
@@ -58,17 +57,17 @@ body, html {
     font-style: normal;
     font-weight: normal;
     font-size: 59px;
-}
+};
 
 .last-image{
     grid-area: last-image;
-}
+};
 
 .content-container{
     display: flex;
     align-items: center;
     justify-content: center;
-}
+};
 
 
 

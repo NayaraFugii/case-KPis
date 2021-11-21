@@ -1,7 +1,7 @@
 body, html {
     height:100%;
     width: 100%;
-}
+};
 
 .home-container{
     width: 100%;
@@ -16,49 +16,51 @@ body, html {
     "img btn-logo"
     ;
 
-    .btn-logo{
-        align-items: end;
-    };
+        .btn-logo{
+            align-items: end;
+        };
 
-    .image{
-        align-self: stretch;
-    };
-}
+        .image{
+            align-self: stretch;
+        };
+};
 
 .image{
     grid-area: img;
     
-}
+};
 
 .navBar{
     grid-area: navBar;
     justify-self: flex-end;
     margin-right: 20%;
 
-    img{
-        margin-left: 10px;
-    }
+        img{
+            margin-left: 10px;
+        };
    
-}
+};
 
 .btn-logo{
     grid-area: btn-logo;
     display: flex;
     align-items: center;
-    justify-content: end;
-    margin-right: 10%;
-    margin-bottom: 0;
-    
+    justify-content: flex-end;
+    margin-right: 15%;    
+    color: #2E455A;   
+     
+        p{
+            margin-right: 10px;
+        }; 
+};
 
-   
-}
 .text-container{
     grid-area: text;
     display: flex;
     flex-direction: column;
     justify-content: center;
     
-}
+};
 
 .title{   
     color: #2E455A;
@@ -68,8 +70,8 @@ body, html {
     font-size: 59px;
     margin-bottom: 30px;
     margin-top: 18px;
-}
+};
 
 .image, .text-container{
     padding: 0 30px;
-}
+};

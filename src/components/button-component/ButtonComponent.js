@@ -11,16 +11,16 @@ const theme = createTheme({
   },
 });
 
-function ButtonComponent({nameBtn, buttonClick, variant}){   
+function ButtonComponent({nameBtn, buttonClick, variant, buttonType,disabled}){   
 
-    return (
-      <>
+  return (
+    <>
       <ThemeProvider theme={theme}>
-        <Button variant={variant} color="primary" onClick={buttonClick} size="large">
+        <Button variant={variant} color="primary" onClick={buttonClick} size="medium" type={buttonType} className="button-tag" disabled={disabled}>
           {nameBtn}
         </Button>
       </ThemeProvider>       
-      </>
-    );
-  };
-  export default ButtonComponent;
+    </>
+  );
+};
+export default ButtonComponent;

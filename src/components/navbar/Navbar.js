@@ -17,29 +17,28 @@ const theme = createTheme({
 });
 
 function Navbar({classNav, percentage, size}){ 
-  
-  console.log(size)
 
-    return (      
-      <>
+  return (      
+    <>
       <ThemeProvider theme={theme}>
         <Box sx={{ flexGrow: 1 }} color="primary">
           <AppBar position="static">
             <Toolbar>
               <div className={classNav}>
-              <p><img src={Gear} alt="image de engrenagem"/><img src={CompanyLogo} alt="logo companhia"/></p>
-                <div className="percentage-container">              
-                    <div className="percentage-bar">
-                      <div className="inner-bar" style={size}></div>                
-                    </div>
-                    <span>{percentage}%</span>
-                </div> 
+                <p><img src={Gear} alt="image de engrenagem"/><img src={CompanyLogo} alt="logo companhia"/></p>
+                  <div className="percentage-container">              
+                      <div className="percentage-bar">
+                        <div className="inner-bar" style={size}></div>                
+                      </div>
+                      
+                      <span>{percentage}%</span>
+                  </div> 
               </div>                
             </Toolbar>
           </AppBar>
         </Box>
       </ThemeProvider>
-      </>
-    );
-  };
-  export default Navbar
+    </>
+  );
+};
+export default Navbar
